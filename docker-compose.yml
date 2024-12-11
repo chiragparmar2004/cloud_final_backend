@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  backend:
+    build: .
+    container_name: node-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_USER=avnadmin
+      - DB_PASS=AVNS_D70kLeh7A1o319aEEZT
+      - DB_HOST=cloud-chiragparmar4780-0d47.f.aivencloud.com
+      - DB_PORT=12298
+      - DB_NAME=defaultdb
+      - DB_SSL_CERT="-----BEGIN CERTIFICATE-----
+        MIIEQTCCAqmgAwIBAgIUdwADt+bpKXUyI1CJmQUxMve7nL0wDQYJKoZIhvcNAQEM
+        BQAwOjE4MDYGA1UEAwwvNjJhNzA3NDctYThmZi00OTM4LWE1MGUtY2ZjN2FhN2Vm
+        NWIxIFByb2plY3QgQ0EwHhcNMjQwOTE3MDczMTAxWhcNMzQwOTE1MDczMTAxWjA6
+        MTgwNgYDVQQDDC82MmE3MDc0Ny1hOGZmLTQ5MzgtYTUwZS1jZmM3YWE3ZWY1YjEg
+        UHJvamVjdCBDQTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBAOQBykhG
+        NmgkisZclV8CqbHmG+jfHXdtiGQjUF9eOShhiFVrz9Ww452JM1ylhKFIEoLXAik/
+        Ptb1+sTLQU5hS2h+mZHbZcmgyxYJQzAEawCi0Ea/ad2fincWF1ZzDvGtABrlmnXo
+        i/D1uQ0siU0HKVr0IRbm2WTgBMRzX43dO8HnByxAlcD1amtlDDNmE2Mrb/r0MPoo
+        Cq/ztuydzREQYo9i7hPLn5qBwuk33N41Q22XsDlp8CdDZ1AMuWfw9zZclVeUOLK3
+        MjiAqXOEcuMToBtaSgG9BarMvQYIClskLOdSzkEQqcQ+/WicI3pRZGQQmjqYP1sK
+        oDMCP4rGxd9ocNeyQaeCEW15Pp1LWO8T/HREhIIFauaqCnhox7e84FUyQSb0JpWk
+        a8B9qwwUT6wmDOS6voquC8pgfSV9vFqyndTl4qLsBdiNONBpRhIYzCUWxfO1uPae
+        phKwXzdyFa68ASFHUaaZbP54agySc4maUO4GUzPCLroJswykaMChLDGx4QIDAQAB
+        oz8wPTAdBgNVHQ4EFgQUiwRb3tTN673ZvSjrbe92XdZpavowDwYDVR0TBAgwBgEB
+        /wIBADALBgNVHQ8EBAMCAQYwDQYJKoZIhvcNAQEMBQADggGBAC816JJLwLPBxMhA
+        HrPAidP4+Ue/zAahxyqIJqqE2AvlcGeFJSxhLN2RSr6JhZVjIeZEIkKm+mQkgGfI
+        r32qGUYRi+sKjtUfyc1g8tG2RHGt+gCMZSdk3SafM7S8xDUfXJPoXin9Ipfld56d
+        pUcfl1OLRF7NmllIxEOFlrxNShMAnAU3Z29P4SjXmqwXmccRxuPaph+mjtqa1b2g
+        q+0O2auaXPdnECDq+lIepuTFjtLwZFS4sC3evxxJudWeM+Kr+YQzkc8lQqENJtot
+        qWuv0lM/YAZORJtKYgLjyxw7nkeL3BY/QUIVVbuzpPjh/fhMF6G3Dzp+lALi4F4N
+        mvYBAZXnS+uhP/DdPDxTwyY6PmGU+R3GlbUFebtPFwqzdYqzLriHSzL3aUl4IYO8
+        vagrGWofPVxkPq106Jv/HwTjyHbyZL59AgQFDB7NZCxYnyhArjZ3gLg19oArM/DJ
+        eTP0M0f+6NNylhkfPngYkJcI+u4o39ffOLx2GTN+z5HJjRdKSA==
+        -----END CERTIFICATE-----"
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - backend-network
+    restart: always
+
+networks:
+  backend-network:
+    driver: bridge
