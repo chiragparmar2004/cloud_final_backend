@@ -1,4 +1,4 @@
-name: CICD
+name: CICD2
 on:
   push:
     branches: [main]
