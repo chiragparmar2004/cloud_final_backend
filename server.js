@@ -7,7 +7,10 @@ const cors = require("cors");
 const { Pool } = require("pg");
 const app = express();
 
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://chiragcloudclient.s3-website.eu-north-1.amazonaws.com",
+];
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
