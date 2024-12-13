@@ -239,6 +239,8 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:3000",
   "http://chiragcloudclient.s3-website.eu-north-1.amazonaws.com",
+  "http://10.20.24.84",
+  "http://10.20.24.81"
 ];
 const corsOptions = {
   origin: function (origin, callback) {
